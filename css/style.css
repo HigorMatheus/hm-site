@@ -6,7 +6,7 @@
     --color-text:#FFFFFF;
     --color-button:#262949;
     --color-title:#748AB7;
-    --color:#736A6D;
+    --color-secundary:#736A6D;
     /*tamanho da fonte padão: 16px - 100% - 1rem*/
     font: 60% arial ; /*9.6px  controle das medidas rem */
     
@@ -45,7 +45,7 @@ body{
 }
 @media( min-width:1000px){
     :root{
-        font: 100% arial;
+        font: 80% arial;
     }
     .container{
         width: 1000px;

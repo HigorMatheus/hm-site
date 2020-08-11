@@ -90,7 +90,7 @@
     #page-home .img-main{
         margin: auto;
         grid-area: img;
-        width: 21rem;
+        width: 28rem;
     }
     #page-home .menu {
         grid-area: menu;
