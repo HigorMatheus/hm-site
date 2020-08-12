@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create-post</title>
+    <link rel="stylesheet" href="./css/partials/form.css">
+    <link rel="stylesheet" href="css/partials/header.css">
+    <link rel="stylesheet" href="/css/partials/create-post.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body  id="page-create-post">
+    <header class="header ">
+        <a href="home.html"><img src="./img/icons/back.svg" alt="" srcset=""></a>
+        <h1>grau zica</h1>
+    </header>
+    <section id="contener-create-post" class=" container contener-create-post">
+       <div class="create-post">
+           <form action="">
+               <fieldset class="fild-create">
+                    <legend> seus dados </legend>
+                    <div id="user" >
+                        <div class="camp-form">
+                            <label class="label-input" for="name">name</label>
+                            <input class="input-block" name="name" id="name" type="text" required/>
+                        </div>
+                        <div class="camp-form">
+                                <label for="email">email</label> 
+                                <input class="input-block " id="email" name="email" type="text" required/>
+                        </div>
+                        <div class="camp-form">
+                            <label for="state"> estado </label>
+                                <select class="select-block " id="state" name="state"  required>
+                                    <option value="">selecione um estado</option>
+                                    <option value="1">sao paulo</option>
+                                </select>
+                        </div>
+                        <div class="camp-form">
+                                <label for="city"> cidade </label>
+                                <select class="select-block "name="city" id="city" required>
+                                    <option value="">selecione uma cidade</option>
+                                    <option value="1">sao paulo</option>
+                                </select>
+                        </div>
+                    </div>
+                </fieldset> 
+                   
+                        <fieldset id="fild-create-post" class="fild-create-post">
+                            <legend>ADD / Photos</legend> 
+                            <div class="postagem">
+                    
+                                <div class="camp-form">
+                                    <label for="photo">photo <span>link (http:// )</span> </label>
+                                    <input class="input-block " name="photo" type="link" required/>
+                                </div>
+                                <div class="camp-form">
+                                    <label for="description">descricao</label>
+                                    <textarea class="textarea-block " name="description" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <button type="submit">enviar</button>
+           </form>
+       </div>
+    </section>
+    <footer class="footer">
+        <h3>Desenvolvido por Higor Matheus </h3>
+    </footer>
+    
+</body>
+</html>
