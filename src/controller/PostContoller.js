@@ -3,7 +3,7 @@ const DB = require('../database/db')
 const PostController = {
         // visualizar todos os usuarios 
         async index (req,res){
-            await DB.select( 'avatar','description').table('users').then((results)=>{
+            await DB.select( 'id','avatar','description').table('users').then((results)=>{
               return res.json(results)
             });
         },
