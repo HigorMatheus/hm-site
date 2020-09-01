@@ -1,6 +1,8 @@
 /node_modules
-*.sqlite
-
 /antigo
 uploads/*
-!uploads/.gitkeep
+!.gitkeep
+conectDB.js
+Knexfile.js
+.env
+auth.json
