@@ -7,6 +7,7 @@ const generateToken = require('../config/auth/generateToken');
 const UserController = {
 
     async index(req,res){
+        
         const users =  await DB.select( 'id','name','email').table('users')
         // const seriarizePhotos= photos.map(photo=>{
         //   return{
@@ -94,7 +95,7 @@ const UserController = {
           name: user[0].name,
           telephone: user[0].telephone,
           email: user[0].email,
-          token : generateToken({ id: user.id})
+          token : generateToken({ id: user[0].id})
         }
         return res.status(200).json(data);
     },

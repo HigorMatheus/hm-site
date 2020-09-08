@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/HigorMatheus/Site_motos#readme",
   "dependencies": {
-    "aws-sdk": "^2.743.0",
+    "aws-sdk": "^2.744.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

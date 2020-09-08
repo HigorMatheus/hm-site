@@ -12,7 +12,7 @@ app.use(cors())
 app.use(boryParser.json())
 app.use(boryParser.urlencoded({extended: false}))
 app.use('/api',routes)
-app.use('/api/uploads',express.static(path.resolve(__dirname, '..','temp','uploads','*')));
+app.use('/api/tmp/uploads',express.static(path.resolve(__dirname, '..','tmp','uploads')));
 
 app.listen(3333)
 

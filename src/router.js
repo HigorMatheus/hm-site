@@ -7,17 +7,17 @@ const routes = express.Router();
 const auth = require('./Middleware/auth');
 
 
-routes.get('/post', auth, PostController.index);
-routes.get('/post/:id', auth, PostController.show);
-routes.post('/user/:id/post', auth, multer( multerConfig).single('imagem') ,PostController.create);
-routes.delete('/user/:id/post/:id', auth, PostController.destroy);
+routes.get('/post',  PostController.index);
+routes.get('/post/:id',  PostController.show);
+routes.post('/user/post', auth, multer( multerConfig).single('imagem') ,PostController.create);
+routes.delete('/user/post/:id',auth , PostController.destroy);
 
 
 routes.post('/user', UserController.create);
 routes.post('/login', UserController.auth);
-routes.get('/user',auth, UserController.index);
-routes.get('/user/:ID',auth, UserController.show);
-routes.put('/user/:ID', auth,UserController.update);
-routes.delete('/user/:ID',auth, UserController.destroy);
+routes.get('/user',  UserController.index);
+routes.get('/user/show', auth, UserController.show);
+routes.put('/user', auth, UserController.update);
+routes.delete('/user', auth, UserController.destroy);
 
 module.exports = routes;

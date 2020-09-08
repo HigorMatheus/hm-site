@@ -3,71 +3,65 @@ const DB = require('../database/conectDB')
 const PostController = {
   // visualizar todos os usuarios 
   async index (req,res){
-    const photos =  await DB.select( 'id','user_id','imagem','description').table('posts')
+    const photos =  await DB.select( 'id','user_id','imagem', 'imagem_url','description').table('posts')
     const seriarizePhotos= photos.map(photo=>{
       return{
         ...photo,
-        image_url: `http://localhost:3333/api/temp/uploads/${photo.imagem}`
+        image_url: `http://localhost:3333/api/tmp/uploads/${photo.imagem}`
       }
     })
-        return res.json({photos:seriarizePhotos})
+        return res.json(seriarizePhotos)
       
   },
   async show(req,res){
    const  id = req.params
-  //  console.log(id);
-    const photo = await DB.table('posts').select('id','user_id', 'imagem', "description").where( id)
+    const photo = await DB.table('posts').select('id', 'imagem','imagem_url', "description").where( id)
     const post= photo[0]
-    const seriarizePhoto= {
-        ...post,
-        image_url: `http://localhost:3333/api/uploads/${post.imagem}`
-    }
-    
-    res.json({post:seriarizePhoto})
+    res.json(post)
   },
   async create (req, res){
-    // const {imagem} = req.body
-    // console.log(imagem);
+    try {
+      const userId = req.userId
+      const{ filename,  location:imagem_url=''}= req.file
+      const {
+          description,
+      } = req.body
+      if(imagem_url===''){
+      const imagem_url = `http://127.0.0.1:3333/api/tmp/uploads/${filename}`
 
-    // try {
-      const {id} = req.params
-        // return res.json({ data: req.body })
-    // return console.log(req.body);
-      const{ filename, location:image_url=''}= req.file
-
-     console.log({ filename,image_url});
-    const {
+          //  return res.json(imagem_url)
+          const post= await DB.table('posts').insert({
+            user_id: userId,
+          imagem: filename,
+          description,
+          imagem_url: imagem_url
+        });
+        const data={ id: post[0], imagem: filename, description, imagem_url }
+        return res.json({ data })
+      }
+      const post= await DB.table('posts').insert({
+          user_id: userId,
+        imagem: filename,
         description,
-      imagem
-    } = req.body
-
-    // const {} = imagem
-
-    // console.log(req.file);
-     const post= await DB.table('posts').insert({
-        user_id: id,
-      imagem: filename,
-      description
-    });
-    const data={
-      id: post,
-      imagem: filename,
-      description,
-      image_url
+        imagem_url: imagem_url
+      });
+      const data={ id: post[0], imagem: filename, description, imagem_url }
+      return res.json({ data })
+    } catch (error) {
+      return res.status(506).json({error})
     }
-
-    return res.json({ data })
-    // } catch (error) {
-    //   return res.status(506).json({error})
-    // }
-  
   },
   async destroy(req,res){
     // selecionando um usuario 
     const {id} = req.params
-    console.log(id);
+    const userId = req.userId
+    // console.log(id, userId);
+    const post =await DB.table('posts').where({id, user_id: userId})
+    if(!post[0]){
+      return res.status(401).json({mensagem: "vc nao é o responsavel por este post "})
+    }
     // delerando um usuario
-    await DB.table('posts').where({id}).del()
+    await DB.table('posts').where({id, user_id: userId}).del()
 
     return res.json({mensagem: "postagem deletada com sucesso"})
   }
