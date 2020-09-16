@@ -34,22 +34,9 @@ See [insomnia](https://insomnia.rest/)
 base_url http://localhost:3001/api/ 
 
 metod post base_url/user criar um usuario enviando dados em Json 
-```bash
-{
-  "name": "Higor Matheus",
-  "telephone": "1100000000",
-  "email": "exemple@email.com",
-  "password": "123456",
-  "confirma_password": "123456"
-}
-```
+
 metod post base_url/login para authenticar um usuario enviando dados em Json
-```bash
-{
-  "email": "exemple@email.com",
-  "password": "123456"
-}
-```
+
 
 <!-- ### Repositorio font end -->
 <!-- See [Repositorio front end](https://github.com/Goncalves-Rafael/megahack3_grupo13_front). -->
