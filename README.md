@@ -1,42 +1,34 @@
-# -back-end_motos
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-criando uma api para estudos 
-<!-- #  Front end da Arplicaçao 
-See [Repositorio front end](https://github.com). -->
+## Getting Started
 
+First, run the development server:
 
-## Instale as dependencias
 ```bash
-yarn
-npm install nodemon -D
+npm run dev
+# or
+yarn dev
 ```
-## inicie o banco de dados
-crie o arquivo Knexfile.js comforme exemplo e conect com o seu banco de dados 
-precisara de um arquivo na pasta src/database/conectDB.js
-sequindo exemplo
-## rode as migrations 
-```bash
-npx knex migrate:latest
-```
-### crie um arquivo auth.json na pasta src/config/auth comforme o exemplo que esta na pasta 
 
-### inicie o funcionamento da API
-```bash
-npm rum dev
-```
-### utilizaçao da API  api com Insominia 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### baixe o sorfitware Insominia para verificar o funcionamento da API 
-See [insomnia](https://insomnia.rest/)
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-#### rotas para utilizaçao 
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-base_url http://localhost:3001/api/ 
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-metod post base_url/user criar um usuario enviando dados em Json 
+## Learn More
 
-metod post base_url/login para authenticar um usuario enviando dados em Json
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-<!-- ### Repositorio font end -->
-<!-- See [Repositorio front end](https://github.com/Goncalves-Rafael/megahack3_grupo13_front). -->
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
