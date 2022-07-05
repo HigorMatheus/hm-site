@@ -5,7 +5,7 @@
         "node": true
     },
     "extends": [
-       
+        "next",
         "plugin:react/recommended",
         "airbnb",
         "plugin:prettier/recommended"
@@ -32,6 +32,7 @@
         "react/jsx-props-no-spreading": "off",
         "no-undef": "off",
         "import/no-extraneous-dependencies": "off",
+        "@next/next/no-img-element":"off",
         "import/extensions": [
             "error",
             "ignorePackages",
