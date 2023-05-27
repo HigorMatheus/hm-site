@@ -4,6 +4,8 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
+import { api } from '@/services/api';
+
 // import { api } from '@/services/api';
 // import { User } from '@/services/mirage';
 // import { queryClient } from '@/services/queryClient';
@@ -129,6 +131,17 @@ export interface Root {
 }
 
 export function Container() {
+  const test = useQuery(
+    ['listUsers'],
+    async () => {
+      const response = await api.get('/users');
+      console.log(response.data);
+      return response.data;
+    },
+    // {
+    //   staleTime: 1000 * 60 * 10, // 10 minutes
+    // },
+  );
   const { data, refetch } = useQuery(
     ['users'],
     async () => {
@@ -142,7 +155,7 @@ export function Container() {
       staleTime: 1000 * 60 * 10, // 10 minutes
     },
   );
-  console.log(data);
+  console.log('test', test, 'data', data);
   return (
     <>
       <div className="min-h-full">
