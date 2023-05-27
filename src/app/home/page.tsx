@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { Container } from './Container';
 
-export default function home() {
-  return <Container></Container>;
+export default async function home() {
+  return (
+    <Suspense>
+      <Container></Container>
+    </Suspense>
+  );
 }
