@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useQueries, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
-import ListUsers from '@/components/ListUsers';
 import { api } from '@/services/api';
 import { User } from '@/services/mirage';
 // import { queryClient } from '@/services/queryClient';
