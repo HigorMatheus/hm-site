@@ -1,54 +1,51 @@
+/**  @type {import('tailwindcss').Config */
+
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        app: 'minmax(18rem, 20rem) 1fr',
+        profile: 'max-content 1fr max-content',
+        form: 'minmax(7.5rem,17.5rem) minmax(25rem,1fr) minmax(0,15rem)',
+      },
+      borderWidth: {
+        6: '6px',
+      },
       colors: {
-        gray: {
-          900: '#181b23',
-          800: '#1f2029',
-          700: '#353646',
-          600: '#4b4d63',
-          500: '#616480',
-          400: '#797d9a',
-          300: '#9699b0',
-          200: '#b3b5c6',
-          100: '#d1d2dc',
-          50: '#eeeef2',
+        violet: {
+          25: '#fcfaff',
         },
+        error: {
+          25: '#FFFBFA',
+          50: '#FEF3F2',
+          100: '#FEE4E2',
+          200: '#FECDCA',
+          300: '#FDA29B',
+          400: '#F97066',
+          500: '#F04438',
+          600: '#D92D20',
+          700: '#B42318',
+          800: '#912018',
+          900: '#7A271A',
+        },
+      },
+      keyframes: {
+        slideDownAndFade: {
+          from: { opacity: 0, transform: 'translateY(-2px)' },
+          to: { opacity: 1, transform: 'translateY(0)' },
+        },
+        slideUpAndFade: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
+      },
 
-        // background: '#f6f5fe',
-        // primary: {
-        //   lighter: '#E0E3FF',
-        //   light: '#6674F4',
-        //   main: '#5061FC',
-        //   dark: '#3346F0',
-        // },
-        // gray: {
-        //   100: '#e5e5e5',
-        //   200: '#bcbcbc',
-        //   900: '#222222',
-        // },
-        // danger: {
-        //   light: '#f97171',
-        //   main: '#fc5050',
-        //   dark: '#f63131',
-        // },
-        // success: {
-        //   main: '#51ca73',
-        // },
-        // gray: {
-        //   900: '#181b23',
-        //   800: '#1f2029',
-        //   700: '#353646',
-        //   600: '#4b4d63',
-        //   500: '#616480',
-        //   400: '#797d9a',
-        //   300: '#9699b0',
-        //   200: '#b3b5c6',
-        //   100: '#d1d2dc',
-        //   50: '#eeeef2',
-        // },
+      animation: {
+        slideDownAndFade:
+          'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideUpAndFade: 'slideUpAndFade 1s linear',
       },
     },
   },
