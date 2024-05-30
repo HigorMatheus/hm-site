@@ -27,5 +27,5 @@ export function UserSpaceWidget() {
         </button>
       </div>
     </div>
-  )
+  );
 }

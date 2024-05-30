@@ -14,7 +14,7 @@ export function FormGroupLabel({
   return (
     <label
       className={twMerge(
-        'text-sm leading-4 h-4 font-medium text-zinc-400',
+        'h-4 text-sm font-medium leading-4 text-zinc-400',
         className,
       )}
       {...props}

@@ -1,10 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
-import '@/styles/global.css';
+import './global.css';
 import { Roboto } from 'next/font/google';
 import React from 'react';
-
-import { Header } from '@/components/Header';
-import { SideBar } from '@/components/SideBar';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -20,14 +16,15 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children, ...props }: RootLayoutProps) {
   return (
     <html lang="en" className="antialiased">
       <body className={roboto.className}>
-        <div className="grid min-h-screen grid-cols-app">
-          <SideBar />
+        {children}
+        {/* <div className="grid min-h-screen ">
+          {/* <SideBar />
           <main className="px-4 pb-12 pt-8">{children}</main>
-        </div>
+        </div> */}
       </body>
     </html>
   );

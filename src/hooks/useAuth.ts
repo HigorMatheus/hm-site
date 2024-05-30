@@ -1,12 +1,12 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 type User = {
-  id: string
-  name: string
-  email: string
-  password: string
-}
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+};
 type State = {
-  user?: User
-}
+  user?: User;
+};
 
-export const useAuth = create<State>()(() => ({}))
+export const useAuth = create<State>()(() => ({}));

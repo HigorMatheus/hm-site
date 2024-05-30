@@ -1,77 +1,99 @@
-'use client'
-import React, { useEffect } from 'react'
-import { Button } from '../Button'
+/* eslint-disable @next/next/no-img-element */
+// 'use client';
+import Image from 'next/image';
+import React from 'react';
 
 export function Header() {
-  useEffect(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [])
+  // useEffect(() => {
+  //   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  //   if (
+  //     localStorage.theme === 'dark' ||
+  //     (!('theme' in localStorage) &&
+  //       window.matchMedia('(prefers-color-scheme: dark)').matches)
+  //   ) {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
+  // }, []);
 
   return (
-    <header className="w-full flex bg-indigo-700 dark:bg-neutral-900 p-3 ">
-      <div className="PageHeader justify-between items-center w-11/12 mx-auto inline-flex">
-        <div className="Logo justify-start items-center gap-4 flex">
-          <div className="IgniteSimbolo w-10 h-9 relative bg-emerald-400 items-center justify-center text-white rounded-full flex">
+    <header className="flex w-full bg-zinc-400 p-3 dark:bg-zinc-900 ">
+      <div className="PageHeader mx-auto inline-flex w-11/12 items-center justify-between">
+        <div className="Logo flex items-center justify-start gap-4">
+          <div className="IgniteSimbolo relative flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white">
             $
           </div>
-          <div className="Heading justify-start items-center flex">
-            <div className="DtMoney text-zinc-200 text-2xl font-bold leading-10">
+          <div className="Heading flex items-center justify-start">
+            <div className="DtMoney text-2xl font-bold leading-10 text-zinc-200">
+              DT Money 2
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            className="h-10 w-10 rounded-full bg-slate-300"
+            src="https://avatars.githubusercontent.com/u/53712358?v=4"
+            alt="Higor Santos"
+
+            // srcset=""
+          />
+        </div>
+      </div>
+      {/* <div className="PageHeader mx-auto inline-flex w-11/12 items-center justify-between">
+        <div className="Logo flex items-center justify-start gap-4">
+          <div className="IgniteSimbolo relative flex h-9 w-10 items-center justify-center rounded-full bg-emerald-400 text-white">
+            $
+          </div>
+          <div className="Heading flex items-center justify-start">
+            <div className="DtMoney text-2xl font-bold leading-10 text-zinc-200">
               DT Money
             </div>
           </div>
         </div>
         <div>
-          <div className=" flex w-90 gap-1">
+          <div className=" w-90 flex gap-1">
             <button
-              className="bg-slate-300 p-1 m-1 rounded leading-relaxed dark:text-white capitalize"
-              onClick={() => {
-                // localStorage.removeItem('theme')
-                localStorage.theme = 'dark'
-                document.documentElement.classList.add('dark')
-              }}
+              className="m-1 rounded bg-slate-300 p-1 capitalize leading-relaxed dark:text-white"
+              // onClick={() => {
+              //   // localStorage.removeItem('theme')
+              //   // localStorage.theme = 'dark';
+              //   // document.documentElement.classList.add('dark');
+              // }}
             >
               dark
             </button>
             <button
-              className="bg-slate-300 p-1 m-1 rounded leading-relaxed dark:text-white capitalize"
-              onClick={() => {
-                // localStorage.removeItem('theme')
-                localStorage.theme = 'light'
-                document.documentElement.classList.remove('dark')
-              }}
+              className="m-1 rounded bg-slate-300 p-1 capitalize leading-relaxed dark:text-white"
+              // onClick={() => {
+              //   // localStorage.removeItem('theme')
+              //   // localStorage.theme = 'light';
+              //   // document.documentElement.classList.remove('dark');
+              // }}
             >
               light
             </button>
             <button
-              className="bg-slate-300 p-1 m-1 rounded leading-relaxed dark:text-white capitalize"
+              className="m-1 rounded bg-slate-300 p-1 capitalize leading-relaxed dark:text-white"
               onClick={() => {
-                localStorage.removeItem('theme')
-                if (
-                  localStorage.theme === 'dark' ||
-                  (!('theme' in localStorage) &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches)
-                ) {
-                  document.documentElement.classList.add('dark')
-                } else {
-                  document.documentElement.classList.remove('dark')
-                }
+                // localStorage.removeItem('theme');
+                // if (
+                //   localStorage.theme === 'dark' ||
+                //   (!('theme' in localStorage) &&
+                //     window.matchMedia('(prefers-color-scheme: dark)').matches)
+                // ) {
+                //   document.documentElement.classList.add('dark');
+                // } else {
+                //   document.documentElement.classList.remove('dark');
+                // }
               }}
             >
               sitiem
             </button>
-            <Button variant="reverse">Nova transação</Button>
+            {/* <Button variant="reverse">Nova transação</Button> *
           </div>
         </div>
-      </div>
+      </div> */}
     </header>
-  )
+  );
 }

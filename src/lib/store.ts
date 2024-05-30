@@ -1,20 +1,20 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
 type Contact = {
-  id: number
-  name: string
-  phone: string
-  email: string
-}
+  id: number;
+  name: string;
+  phone: string;
+  email: string;
+};
 type Actions = {
-  createContact: (qty: Omit<Contact, 'id'>) => void
+  createContact: (qty: Omit<Contact, 'id'>) => void;
   // decrement: (qty: number) => void;
-}
+};
 
 type State = {
-  contacts: Array<Contact>
-  contactSelected?: Contact
-}
+  contacts: Array<Contact>;
+  contactSelected?: Contact;
+};
 
 export const useContact = create<State>(() => ({
   contacts: [
@@ -27,24 +27,24 @@ export const useContact = create<State>(() => ({
     {
       email: 'bruno@test.com.br',
       id: Math.random(),
-      name: 'bruno',
+      name: 'Bruno',
       phone: '935476745',
     },
   ],
   contactSelected: undefined,
-}))
+}));
 
 export const useCountStore = create(() => ({
   count: 0,
   text: 'test',
-}))
+}));
 
 export const useCountActions = (): Actions => {
   return {
     createContact(contact) {
       useContact.setState((state) => ({
         contacts: [...state.contacts, { ...contact, id: Math.random() }],
-      }))
+      }));
     },
-  }
-}
+  };
+};

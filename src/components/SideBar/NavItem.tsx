@@ -1,9 +1,9 @@
-import { ElementType } from 'react'
-import { LuChevronDown } from 'react-icons/lu'
+import { ElementType } from 'react';
+import { LuChevronDown } from 'react-icons/lu';
 
 interface NavItemProps {
-  title: string
-  icon: ElementType
+  title: string;
+  icon: ElementType;
 }
 export function NavItem({ title, icon: Icon }: NavItemProps) {
   return (
@@ -17,5 +17,5 @@ export function NavItem({ title, icon: Icon }: NavItemProps) {
       </span>
       <LuChevronDown className="ml-auto h-5 w-5 text-zinc-500 group-hover:text-violet-300" />
     </a>
-  )
+  );
 }

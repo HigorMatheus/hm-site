@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 export function Logo() {
   return (
@@ -207,5 +207,5 @@ export function Logo() {
       </svg>
       <span className="">Untitled UI</span>
     </strong>
-  )
+  );
 }

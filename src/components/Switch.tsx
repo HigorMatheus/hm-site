@@ -1,4 +1,4 @@
-import { Switch as SwitchUi } from '@headlessui/react';
+// import { Switch as SwitchUi } from '@headlessui/react';
 
 interface SwitchProps {
   checked: boolean;
@@ -7,7 +7,7 @@ interface SwitchProps {
 export default function Switch({ checked, onChange }: SwitchProps) {
   return (
     <div className="py-2">
-      <SwitchUi
+      {/* <SwitchUi
         checked={checked}
         onChange={onChange}
         className={`${checked ? 'bg-teal-900' : 'bg-teal-700'}
@@ -19,7 +19,7 @@ export default function Switch({ checked, onChange }: SwitchProps) {
           className={`${checked ? 'translate-x-7' : 'translate-x-0'}
             pointer-events-none inline-block h-8 w-8 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
         />
-      </SwitchUi>
+      </SwitchUi> */}
     </div>
   );
 }
