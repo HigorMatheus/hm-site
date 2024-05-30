@@ -31,13 +31,13 @@ export function Header() {
           </div>
         </div>
         <div>
-          <img
+          {/* <img
             className="h-10 w-10 rounded-full bg-slate-300"
             src="https://avatars.githubusercontent.com/u/53712358?v=4"
             alt="Higor Santos"
 
             // srcset=""
-          />
+          /> */}
         </div>
       </div>
       {/* <div className="PageHeader mx-auto inline-flex w-11/12 items-center justify-between">
