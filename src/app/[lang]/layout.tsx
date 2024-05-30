@@ -1,7 +1,7 @@
 import { Roboto } from 'next/font/google';
 import React from 'react';
 
-import { Header } from '../../components/header';
+// import { Header } from '../../components/header';
 
 // import { Header } from '@/components/';
 // import { PageProps } from '@/data/page';
@@ -13,7 +13,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <main className="h-screen bg-zinc-100">
-      <Header />
+      <div>test deploy</div>
 
       {children}
     </main>
