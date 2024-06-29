@@ -9,18 +9,23 @@ export function Prefix(props: InputPrefixProps) {
 
 export interface InputControlProps extends ComponentProps<'input'> {}
 
-export function Control({ className, ...props }: InputControlProps) {
-  return (
-    <input
-      className={twMerge(
-        'flex-1 border-0 bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-0 focus:outline-0',
-        className,
-      )}
-      {...props}
-      // value={'test'}
-    />
-  );
-}
+export const Control = React.forwardRef(
+  ({ className, ref, ...props }: InputControlProps) => {
+    return (
+      <input
+        ref={ref}
+        className={twMerge(
+          'flex-1 border-0 bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-0 focus:outline-0',
+          className,
+        )}
+        {...props}
+        // value={'test'}
+      />
+    );
+  },
+);
+
+Control.displayName = 'inputControl';
 
 export interface InputRootProps extends ComponentProps<'div'> {}
 

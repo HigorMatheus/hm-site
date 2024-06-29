@@ -20,11 +20,11 @@ export default function RootLayout({ children, ...props }: RootLayoutProps) {
   return (
     <html lang="en" className="antialiased">
       <body className={roboto.className}>
-        {children}
-        {/* <div className="grid min-h-screen ">
-          {/* <SideBar />
-          <main className="px-4 pb-12 pt-8">{children}</main>
-        </div> */}
+        <div className="grid">
+          {children}
+          {/* <SideBar /> */}
+          {/* <main className="px-4 pb-12 pt-8">{children}</main> */}
+        </div>
       </body>
     </html>
   );

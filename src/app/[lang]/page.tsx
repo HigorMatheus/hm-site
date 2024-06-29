@@ -1,11 +1,10 @@
-import React from 'react';
+import { makeContactsFactory } from '@/main/factories/pages/contacts-factory';
 
-import { PageProps } from '@/data/page';
-
-export default function Page(props: PageProps<{ page: number }>) {
-  return (
-    <main>
-      <div>test</div>
-    </main>
-  );
+export default function Page() {
+  return makeContactsFactory();
+  // return (
+  //   <main className="h-screen bg-zinc-400 px-2 py-3 ">
+  //     <Form />
+  //   </main>
+  // );
 }
