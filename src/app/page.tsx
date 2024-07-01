@@ -22,7 +22,7 @@ export default function Home() {
           <div className="mt-4 flex w-full justify-around">
             <a
               className={buttonVariants({})}
-              href="https://www.instagram.com/p/C8Hrm2spgRm/"
+              href="https://www.instagram.com/p/C84tFc-uSBm/"
             >
               Sim
             </a>
