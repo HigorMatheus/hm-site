@@ -1,0 +1,20 @@
+{
+  "cSpell.words": [
+    "koynonya"
+  ],
+  "editor.defaultFormatter": "evolution-gaming.evolution-gaming--vscode-eslint",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    // "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    // "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+}

@@ -20,10 +20,7 @@ export default function Home() {
         <div className="mb-10 rounded bg-gray-400 p-3">
           <h1> Vamos para o Koynonia? </h1>
           <div className="mt-4 flex w-full justify-around">
-            <a
-              className={buttonVariants({})}
-              href="/koynonya-02-08.jpeg"
-            >
+            <a className={buttonVariants({})} href="/koynonya-02-08.jpeg">
               Sim
             </a>
             <button
