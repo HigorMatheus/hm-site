@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
-import { LuLogOut } from 'react-icons/lu';
 
 import { Button } from '../Button';
+import { LogOutIcon } from 'lucide-react';
 
 export function Profile() {
   return (
@@ -20,7 +19,7 @@ export function Profile() {
         </span>
       </div>
       <Button type="button" variant="ghost">
-        <LuLogOut className="h-5 w-5 text-zinc-500" />
+        <LogOutIcon className="h-5 w-5 text-zinc-500" />
       </Button>
     </div>
   );

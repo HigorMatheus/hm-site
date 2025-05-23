@@ -1,8 +1,9 @@
 'use client';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
+import { ChevronDownIcon } from 'lucide-react';
 import { ReactNode } from 'react';
-import { LuCheck, LuChevronDown } from 'react-icons/lu';
+// import { LuCheck, LuChevronDown } from 'react-icons/lu';
 
 export interface SelectProps extends SelectPrimitive.SelectProps {
   children: ReactNode;
@@ -18,7 +19,7 @@ export function Select({ children, placeholder, ...props }: SelectProps) {
           className="text-black"
         />
         <SelectPrimitive.Icon>
-          <LuChevronDown className="h-5 w-5 text-zinc-500" />
+          <ChevronDownIcon className="h-5 w-5 text-zinc-500" />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
 

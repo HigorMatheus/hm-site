@@ -1,8 +1,9 @@
 'use client';
 import { useMemo } from 'react';
-import { LuUser } from 'react-icons/lu';
+
 
 import { useFileInput } from './Root';
+import { UserIcon } from 'lucide-react';
 
 export interface ImagePreviewProps {}
 
@@ -19,7 +20,7 @@ export function ImagePreview(props: ImagePreviewProps) {
   if (previewURL === null) {
     return (
       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
-        <LuUser className="h-8 w-8 text-violet-500" />
+        <UserIcon className="h-8 w-8 text-violet-500" />
       </div>
     );
   } else {

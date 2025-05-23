@@ -1,7 +1,8 @@
 'use client';
 
 import * as Select from '@radix-ui/react-select';
-import { LuCheck } from 'react-icons/lu';
+import { CheckIcon } from 'lucide-react';
+// import { LuCheck } from 'react-icons/lu';
 
 export type SelectItemProps = Select.SelectItemProps & {
   text: string;
@@ -15,7 +16,7 @@ export function SelectItem({ text, ...props }: SelectItemProps) {
     >
       <Select.ItemText className="text-black">{text}</Select.ItemText>
       <Select.ItemIndicator>
-        <LuCheck className="h-4 w-4 text-violet-500" />
+        <CheckIcon className="h-4 w-4 text-violet-500" />
       </Select.ItemIndicator>
     </Select.Item>
   );

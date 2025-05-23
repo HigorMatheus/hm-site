@@ -1,9 +1,9 @@
-// 'use client';
+'use client';
 
 import { apiNext } from '@/config/api';
 import { use } from 'react';
 
-export default async function UserPage() {
+export default  function UserPage() {
 	// use(async () => {
 	// api.get('/users').then((res) => {
 	// 	console.log('res axios', res.data);
