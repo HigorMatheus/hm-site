@@ -31,4 +31,8 @@ console.log('process.env', process.env);
 // 	throw new Error('Invalid environment variables');
 // }
 
-export const env = process.env as z.infer<typeof envSchema>;
+export const env: z.infer<typeof envSchema> = {
+	APP_URL: process.env.APP_URL || 'http://localhost:3000',
+	NEXT_PUBLIC_API_BASE_URL:
+		process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000',
+};
