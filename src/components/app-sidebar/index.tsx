@@ -1,27 +1,17 @@
 import React from 'react';
 import {
-  LuBarChart,
-  LuCheckSquare,
-  LuCog,
-  LuFlag,
-  LuHome,
-  LuLifeBuoy,
-  LuSearch,
-  LuSquareSlash,
-  LuUsers,
-} from 'react-icons/lu';
+	Sidebar,
+	SidebarContent,
+	SidebarFooter,
+	SidebarGroup,
+	SidebarGroupLabel,
+	SidebarHeader,
+} from '../ui/sidebar';
 
-import * as Input from '@/components/Input';
-
-import { Logo } from './Logo';
-import { NavItem } from './NavItem';
-import { Profile } from './Profile';
-import { UserSpaceWidget } from './UserSpaceWidget';
-
-export function SideBar() {
-  return (
-    <>
-      <aside className="flex flex-col gap-6 overflow-auto border-r border-zinc-200 px-5 py-8">
+export function AppSidebar() {
+	return (
+		<>
+			{/* <aside className="flex flex-col gap-6 overflow-auto border-r border-zinc-200 px-5 py-8">
         <Logo />
         <Input.Root>
           <Input.Prefix>
@@ -50,7 +40,18 @@ export function SideBar() {
           <div className="h-px bg-zinc-200" />
           <Profile />
         </div>
-      </aside>
-    </>
-  );
+      </aside> */}
+			<Sidebar>
+				<SidebarHeader>Pizza</SidebarHeader>
+				<SidebarContent>
+					<SidebarGroup>
+						<SidebarGroupLabel>test</SidebarGroupLabel>
+						<SidebarContent>test</SidebarContent>
+					</SidebarGroup>
+					<SidebarGroup />
+				</SidebarContent>
+				<SidebarFooter />
+			</Sidebar>
+		</>
+	);
 }
