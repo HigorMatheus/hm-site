@@ -1,6 +1,11 @@
+import { ThemeProvider } from '@/components/theme-provider';
 import './global.css';
 import { AppSidebar } from '@/components/app-sidebar';
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import {
+	SidebarInset,
+	SidebarProvider,
+	SidebarTrigger,
+} from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 import { Roboto } from 'next/font/google';
 import React from 'react';
@@ -21,15 +26,19 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children, ...props }: RootLayoutProps) {
 	return (
-		<html lang="en" className="antialiased">
-			<body className={cn('w-screen h-screen max-h-screen', roboto.className)}>
-				<SidebarProvider>
-					<AppSidebar />
-					<main>
-						<SidebarTrigger />
-						{children}
-					</main>
-				</SidebarProvider>
+		<html lang="en" className="antialiased" suppressHydrationWarning>
+			<body className={cn('', roboto.className)}>
+				<ThemeProvider attribute="class" defaultTheme="system">
+					<SidebarProvider>
+						<AppSidebar />
+						<SidebarInset>
+							{/* <main className="max-h-screen"> */}
+							<SidebarTrigger />
+							{children}
+							{/* </main> */}
+						</SidebarInset>
+					</SidebarProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

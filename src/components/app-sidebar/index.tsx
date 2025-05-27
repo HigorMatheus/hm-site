@@ -1,57 +1,182 @@
-import React from 'react';
+import * as React from 'react';
+
+// import { SearchForm } from "@/components/search-form"
+// import { VersionSwitcher } from "@/components/version-switcher"
 import {
 	Sidebar,
 	SidebarContent,
-	SidebarFooter,
 	SidebarGroup,
+	SidebarGroupContent,
 	SidebarGroupLabel,
 	SidebarHeader,
-} from '../ui/sidebar';
+	SidebarMenu,
+	SidebarMenuButton,
+	SidebarMenuItem,
+	SidebarRail,
+} from '@/components/ui/sidebar';
 
-export function AppSidebar() {
+// This is sample data.
+const data = {
+	versions: ['1.0.1', '1.1.0-alpha', '2.0.0-beta1'],
+	navMain: [
+		{
+			title: 'Getting Started',
+			url: '#',
+			items: [
+				{
+					title: 'Installation',
+					url: '#',
+				},
+				{
+					title: 'Project Structure',
+					url: '#',
+				},
+			],
+		},
+		{
+			title: 'Building Your Application',
+			url: '#',
+			items: [
+				{
+					title: 'Routing',
+					url: '#',
+				},
+				{
+					title: 'Data Fetching',
+					url: '#',
+					isActive: true,
+				},
+				{
+					title: 'Rendering',
+					url: '#',
+				},
+				{
+					title: 'Caching',
+					url: '#',
+				},
+				{
+					title: 'Styling',
+					url: '#',
+				},
+				{
+					title: 'Optimizing',
+					url: '#',
+				},
+				{
+					title: 'Configuring',
+					url: '#',
+				},
+				{
+					title: 'Testing',
+					url: '#',
+				},
+				{
+					title: 'Authentication',
+					url: '#',
+				},
+				{
+					title: 'Deploying',
+					url: '#',
+				},
+				{
+					title: 'Upgrading',
+					url: '#',
+				},
+				{
+					title: 'Examples',
+					url: '#',
+				},
+			],
+		},
+		{
+			title: 'API Reference',
+			url: '#',
+			items: [
+				{
+					title: 'Components',
+					url: '#',
+				},
+				{
+					title: 'File Conventions',
+					url: '#',
+				},
+				{
+					title: 'Functions',
+					url: '#',
+				},
+				{
+					title: 'next.config.js Options',
+					url: '#',
+				},
+				{
+					title: 'CLI',
+					url: '#',
+				},
+				{
+					title: 'Edge Runtime',
+					url: '#',
+				},
+			],
+		},
+		{
+			title: 'Architecture',
+			url: '#',
+			items: [
+				{
+					title: 'Accessibility',
+					url: '#',
+				},
+				{
+					title: 'Fast Refresh',
+					url: '#',
+				},
+				{
+					title: 'Next.js Compiler',
+					url: '#',
+				},
+				{
+					title: 'Supported Browsers',
+					url: '#',
+				},
+				{
+					title: 'Turbopack',
+					url: '#',
+				},
+			],
+		},
+	],
+};
+
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
-		<>
-			{/* <aside className="flex flex-col gap-6 overflow-auto border-r border-zinc-200 px-5 py-8">
-        <Logo />
-        <Input.Root>
-          <Input.Prefix>
-            <LuSearch className="h-5 w-5 text-zinc-500" />
-          </Input.Prefix>
-          <Input.Control
-            className="w-full text-zinc-900 placeholder-zinc-600"
-            placeholder="search"
-          />
-        </Input.Root>
-
-        <nav className="space-x-0.5">
-          <NavItem title="Home" icon={LuHome} />
-          <NavItem title="Dashboard" icon={LuBarChart} />
-          <NavItem title="Projects" icon={LuSquareSlash} />
-          <NavItem title="Tasks" icon={LuCheckSquare} />
-          <NavItem title="Reporting" icon={LuFlag} />
-          <NavItem title="Users" icon={LuUsers} />
-        </nav>
-        <div className="mt-auto flex flex-col gap-6">
-          <nav className="space-y-0.5">
-            <NavItem title="Support" icon={LuLifeBuoy} />
-            <NavItem title="Settings" icon={LuCog} />
-          </nav>
-          <UserSpaceWidget />
-          <div className="h-px bg-zinc-200" />
-          <Profile />
-        </div>
-      </aside> */}
-			<Sidebar>
-				<SidebarHeader>Pizza</SidebarHeader>
-				<SidebarContent>
-					<SidebarGroup>
-						<SidebarGroupLabel>test</SidebarGroupLabel>
-						<SidebarContent>test</SidebarContent>
+		<Sidebar>
+			<SidebarHeader>
+				{/* <VersionSwitcher
+          versions={data.versions}
+          defaultVersion={data.versions[0]}
+        /> */}
+				{/* <SearchForm /> */}
+			</SidebarHeader>
+			<SidebarContent>
+				{/* We create a SidebarGroup for each parent. */}
+				{data.navMain.map((item) => (
+					<SidebarGroup key={item.title}>
+						<SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+						<SidebarGroupContent>
+							<SidebarMenu>
+								{item.items.map((item) => (
+									<SidebarMenuItem key={item.title}>
+										<SidebarMenuButton asChild isActive={item.isActive}>
+											<a href={item.url}>{item.title}</a>
+										</SidebarMenuButton>
+									</SidebarMenuItem>
+								))}
+							</SidebarMenu>
+						</SidebarGroupContent>
 					</SidebarGroup>
-					<SidebarGroup />
-				</SidebarContent>
-				<SidebarFooter />
-			</Sidebar>
-		</>
+				))}
+			</SidebarContent>
+			<SidebarRail />
+		</Sidebar>
 	);
 }

@@ -1,15 +1,11 @@
-import React from 'react';
+import { LoginForm } from '@/components/login-form';
 
-export default function Login() {
-	// const schema = z.object({
-	//   ol
-	// });
+export default function Page() {
 	return (
-		<div>
-			<div> tet e</div>
+		<div className="flex min-h-svh  items-center justify-center p-6 md:p-10">
+			<div className=" max-w-sm">
+				<LoginForm />
+			</div>
 		</div>
 	);
 }
-/*
-
-*/
