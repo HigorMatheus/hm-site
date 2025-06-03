@@ -1,3 +1,4 @@
+// 'use client';
 import { Button } from '@/components/ui/button';
 import {
 	Card,
@@ -9,11 +10,15 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
+// import { useMemo } from 'react';
+// import { useForm } from 'react-hook-form';
 
 export function LoginForm({
 	className,
 	...props
 }: React.ComponentProps<'div'>) {
+	// const form = useForm({});
+
 	return (
 		<div className={cn('flex flex-col gap-6', className)} {...props}>
 			<Card>
@@ -34,6 +39,7 @@ export function LoginForm({
 								<Input
 									id="email"
 									type="email"
+									// {...form.register('email')}
 									placeholder="m@example.com"
 									required
 								/>

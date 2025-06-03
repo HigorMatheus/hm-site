@@ -1,10 +1,10 @@
 import { env } from '@/env';
-// import axios from 'axios';
+import axios from 'axios';
 
 const API_BASE_URL = env.NEXT_PUBLIC_API_BASE_URL;
-// export const api = axios.create({
-// 	baseURL: API_BASE_URL + '/api',
-// });
+export const api = axios.create({
+	baseURL: API_BASE_URL + '/api',
+});
 
 export async function apiNext(path: string, init?: RequestInit) {
 	const baseUrl = env.NEXT_PUBLIC_API_BASE_URL;
