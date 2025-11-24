@@ -2,6 +2,14 @@
 
 import { useRef, useState } from 'react';
 
+import { CTA } from '@/components/cta';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { Hero } from '@/components/hero';
+import { Projects } from '@/components/projects';
+import { Services } from '@/components/services';
+import { Stats } from '@/components/stats';
+import { Technologies } from '@/components/technologies';
 import { cn } from '@/lib/utils';
 
 export default function Home() {
@@ -14,7 +22,15 @@ export default function Home() {
 	// };
 
 	return (
-		<div className="relative flex    items-center justify-center">
+		<div className="relative flex items-center justify-center">
+			<Header />
+			<Hero />
+			<Stats />
+			<Services />
+			<Technologies />
+			<Projects />
+			<CTA />
+			<Footer />
 			{/* <div>
         <div className="mb-10 rounded bg-gray-400 p-3">
           <h1> Vamos para o Koynonia? </h1>

@@ -33,7 +33,7 @@ export default function RootLayout({ children, ...props }: RootLayoutProps) {
 						<AppSidebar />
 						<SidebarInset>
 							{/* <main className="max-h-screen"> */}
-							<SidebarTrigger />
+							{/* <SidebarTrigger /> */}
 							{children}
 							{/* </main> */}
 						</SidebarInset>
