@@ -27,17 +27,17 @@ interface RootLayoutProps {
 export default function RootLayout({ children, ...props }: RootLayoutProps) {
 	return (
 		<html lang="en" className="antialiased" suppressHydrationWarning>
-			<body className={cn('', roboto.className)}>
+			<body className={cn('', roboto.className)} cz-shortcut-listen="true">
 				<ThemeProvider attribute="class" defaultTheme="system">
-					<SidebarProvider>
+					{/* <SidebarProvider>
 						<AppSidebar />
-						<SidebarInset>
-							{/* <main className="max-h-screen"> */}
-							{/* <SidebarTrigger /> */}
-							{children}
-							{/* </main> */}
-						</SidebarInset>
-					</SidebarProvider>
+						<SidebarInset> */}
+					{/* <main className="max-h-screen"> */}
+					{/* <SidebarTrigger /> */}
+					{children}
+					{/* </main> */}
+					{/* </SidebarInset>
+					</SidebarProvider> */}
 				</ThemeProvider>
 			</body>
 		</html>

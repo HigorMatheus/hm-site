@@ -22,7 +22,7 @@ export default function Home() {
 	// };
 
 	return (
-		<div className="relative flex items-center justify-center">
+		<div className="relative flex flex-col items-center justify-center">
 			<Header />
 			<Hero />
 			<Stats />
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-			<div className="">Desenvolvido por Higor Matheus</div>
+			{/* <div className="">Desenvolvido por Higor Matheus</div> */}
 		</div>
 	);
 	// return (
